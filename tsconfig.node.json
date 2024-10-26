@@ -7,11 +7,10 @@
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
-
+    "composite": true,  // Esta opción es requerida para proyectos referenciados
+    "noEmit": false,    // Asegúrate de que no esté configurado en true
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
