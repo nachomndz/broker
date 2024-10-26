@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2023", "DOM", "DOM.Iterable", "ES2015"],  // Añadir ES2015 para soporte de Symbol
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "ES2015"], 
     "module": "ESNext",
     "skipLibCheck": true,
-    "moduleResolution": "Bundler",
+    "jsx": "react-jsx"
+,    "allowSyntheticDefaultImports": true,
+
+    "moduleResolution": "node",
     "isolatedModules": true,
     "moduleDetection": "force",
-    "composite": true,
-    "noEmit": false,
-    "strict": true,
+    "noEmit": false, 
+    "outDir": "./dist",  
+    "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "composite": true
   },
   "include": ["vite.config.ts"]
 }
