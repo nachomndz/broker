@@ -11,8 +11,15 @@ const recaptchaKey = "6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE"; // Tu Site Key 
 app.use(express.json());
 
 // Permitir CORS para el dominio de tu frontend
-const allowedOrigins = ['https://www.hipotecasinentradas.com', 'http://localhost:5173']; // Añade la URL de tu frontend
-app.use(cors({ origin: allowedOrigins }));
+const allowedOrigins = [
+    /\.hipotecasinentradas\.com$/, // Permitir cualquier subdominio
+    'http://localhost:5173',
+    /^https:\/\/.*-ignacios-projects-\w+\.vercel\.app$/, // Permitir cualquier subdominio de Vercel que siga el patrón
+
+    // Para desarrollo local
+  ];
+  
+  app.use(cors({ origin: allowedOrigins }));
 
 app.post('/api/verificar-captcha', async (req, res) => {
     const token = req.body.token;
