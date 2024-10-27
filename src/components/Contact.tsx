@@ -68,7 +68,7 @@ function Contact() {
   }
 
   return (
-    <div className="contact-form-container">
+    <div id="contact" className="contact-form-container">
       <form onSubmit={handleCaptchaVerification} className="contact-form">
         <div className="form-group">
           <label htmlFor="nombre">Nombre</label>
