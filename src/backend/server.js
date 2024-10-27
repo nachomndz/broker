@@ -27,10 +27,11 @@ const projectID = "my-project-49814-1729980997678"; // Tu Project ID de Google C
 const recaptchaKey = "6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE"; // Tu Site Key de reCAPTCHA
 
 // Ruta para verificar el token de reCAPTCHA
-app.post('/verificar-captcha', async (req, res) => {
+app.post('/api/verificar-captcha', async (req, res) => {
   const token = req.body.token;
 
   try {
+    console.log("entro por aqui")
     const projectPath = client.projectPath(projectID);
     const request = {
       assessment: {

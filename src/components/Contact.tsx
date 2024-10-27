@@ -16,31 +16,37 @@ function Contact() {
     aceptaPolitica: false,
     aceptaComunicaciones: false
   });
-  console.log('API URL:', import.meta.env.VITE_API_URL);
 
+  // Verificar el token de CAPTCHA cuando se monta el componente
   useEffect(() => {
     grecaptcha.enterprise.ready(() => {
-      grecaptcha.enterprise.execute('6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE', { action: 'submit' }).then((token) => {
-        setCaptchaToken(token);
-        fetch(`${import.meta.env.VITE_API_URL}/verificar-captcha`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ token })
+      grecaptcha.enterprise.execute('6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE', { action: 'submit' })
+        .then((token) => {
+          setCaptchaToken(token); // Guardar el token en el estado
+          // Aquí puedes hacer la verificación de CAPTCHA inmediatamente
+          return fetch(`${import.meta.env.VITE_API_URL}/api/verificar-captcha`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ token })
+          });
         })
         .then(response => response.json())
         .then(data => {
           if (data.success) {
             console.log('Verificación de CAPTCHA exitosa');
           } else {
-            setCaptchaToken(null);
+            console.error('Error de verificación:', data.message);
+            setCaptchaToken(null); // Limpiar el token si la verificación falla
           }
+        })
+        .catch(error => {
+          console.error('Error al verificar CAPTCHA:', error);
         });
-      });
     });
-  }, []);
-  
+  }, []); // El efecto solo se ejecuta una vez cuando el componente se monta
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
@@ -53,7 +59,7 @@ function Contact() {
     e.preventDefault();
     if (captchaToken) {
       setIsSubmitting(true);
-      handleSubmit(e);
+      handleSubmit(e); // Enviar el formulario
     }
   };
 
