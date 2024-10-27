@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './FAQ.css'; // Asegúrate de tener este archivo CSS
 
 const FAQ = () => {
