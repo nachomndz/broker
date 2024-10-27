@@ -1,7 +1,17 @@
 const express = require('express');
+require('dotenv').config();
+
 const { RecaptchaEnterpriseServiceClient } = require('@google-cloud/recaptcha-enterprise');
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "./config/credentials.json";
+// process.env.GOOGLE_APPLICATION_CREDENTIALS = "./config/credentials.json";
 const app = express();
+console.log('Entorno:', process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === 'production') {
+    process.env.GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_CREDENTIALS; // Usar variable de entorno en producción
+} else {
+    process.env.GOOGLE_APPLICATION_CREDENTIALS = "./config/credentials.json"; // Usar ruta local en desarrollo
+}
+
 console.log('Ruta de credenciales:', process.env.GOOGLE_APPLICATION_CREDENTIALS);
 
 const port = 3001;

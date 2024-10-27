@@ -5,6 +5,9 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
+import BankLogos from './components/BankLogos';
+import Steps from './components/Steps';
+import FAQ from './components/FAQ';
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
       <main>
         <Home />
         <About />
+        <BankLogos></BankLogos>
+        <Steps></Steps>
+        <FAQ></FAQ>
         <Services />
         <Contact />
       </main>

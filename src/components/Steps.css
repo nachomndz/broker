@@ -1,0 +1,43 @@
+.steps-home {
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 40px 20px; /* Espaciado */
+}
+
+.steps-home__title {
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.steps-container {
+    display: flex; /* Usar flexbox para la alineación */
+    justify-content: space-around; /* Distribuir los elementos */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+.block-item {
+    background-size: contain; /* Asegura que la imagen se ajuste correctamente */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-position: center; /* Centrar la imagen */
+    width: 23%; /* Ancho de cada bloque (ajusta según sea necesario) */
+    margin: 10px; /* Espacio entre bloques */
+    padding: 60px 20px; /* Espacio interno, aumenta el padding superior para el texto */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    color: #333; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.block-item__inner {
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido para mejor legibilidad */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+}
+
+.block-title {
+    font-size: 20px; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+}
+
+.block-description {
+    font-size: 16px; /* Tamaño de la descripción */
+    margin-top: 5px; /* Margen superior */
+}

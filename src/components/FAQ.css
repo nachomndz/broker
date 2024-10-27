@@ -1,0 +1,38 @@
+.section-faqs {
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 40px 20px; /* Espaciado */
+}
+
+.faq-title {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.dropdownBlocks {
+    display: flex; /* Usar flexbox para la alineación */
+    flex-direction: column; /* Colocar en columna */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+.dropdownBlock {
+    background: white; /* Fondo blanco para cada bloque */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espacio interno */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el bloque */
+    transition: background 0.3s; /* Transición suave */
+}
+
+.dropdownBlock:hover {
+    background: #e0e0e0; /* Cambiar fondo al pasar el cursor */
+}
+
+.dropdownBlock__title {
+    font-size: 18px; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+}
+
+.dropdownBlock__content {
+    padding: 10px 0; /* Espacio interno en la respuesta */
+    font-size: 16px; /* Tamaño de la respuesta */
+}
