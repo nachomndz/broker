@@ -33,7 +33,7 @@ const BankLogos = () => {
             "023-unicaja.png",
           ].map((logo, index) => (
             <div className="bannerImages__img" key={index}>
-              <img loading="lazy" src={`src/assets/banklogos/${logo}`} alt="La mejor hipoteca del mercado" />
+              <img loading="lazy" src={`/assets/banklogos/${logo}`} alt="La mejor hipoteca del mercado" />
             </div>
           ))}
         </div>
