@@ -6,7 +6,7 @@
     "skipLibCheck": true,
     "jsx": "react-jsx"
 ,    "allowSyntheticDefaultImports": true,
-
+"types": ["node"],
     "moduleResolution": "node",
     "isolatedModules": true,
     "moduleDetection": "force",
