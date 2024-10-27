@@ -1,43 +1,68 @@
 .steps-home {
-    background-color: #f9f9f9; /* Fondo claro */
-    padding: 40px 20px; /* Espaciado */
+    background-color: #f9f9f9;
+    padding: 40px 20px;
 }
 
 .steps-home__title {
-    margin-bottom: 20px; /* Espacio debajo del título */
+    margin-bottom: 20px;
 }
 
 .steps-container {
-    display: flex; /* Usar flexbox para la alineación */
-    justify-content: space-around; /* Distribuir los elementos */
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .block-item {
-    background-size: contain; /* Asegura que la imagen se ajuste correctamente */
-    background-repeat: no-repeat; /* No repetir la imagen */
-    background-position: center; /* Centrar la imagen */
-    width: 23%; /* Ancho de cada bloque (ajusta según sea necesario) */
-    margin: 10px; /* Espacio entre bloques */
-    padding: 60px 20px; /* Espacio interno, aumenta el padding superior para el texto */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    color: #333; /* Color del texto */
-    text-align: center; /* Centrar el texto */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 23%;
+    margin: 10px;
+    padding: 60px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s ease; /* Transición suave para hover */
 }
 
 .block-item__inner {
-    background: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido para mejor legibilidad */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .block-title {
-    font-size: 20px; /* Tamaño del título */
-    font-weight: bold; /* Negrita */
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .block-description {
-    font-size: 16px; /* Tamaño de la descripción */
-    margin-top: 5px; /* Margen superior */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Añadir efecto hover para pantallas más grandes */
+@media (min-width: 768px) {
+    .block-item:hover {
+        transform: translateY(-10px); /* Efecto de desplazamiento en hover */
+    }
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+    .block-item {
+        width: 45%; /* Bloques más grandes en pantallas medianas */
+        padding: 40px 10px; /* Reducir el padding */
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    .block-item {
+        width: 100%; /* Cada bloque ocupa el 100% del ancho */
+        margin: 10px 0; /* Espaciado vertical */
+        padding: 30px 10px; /* Reducir el padding */
+    }
 }
