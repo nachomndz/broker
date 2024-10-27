@@ -21,7 +21,7 @@ function Contact() {
     grecaptcha.enterprise.ready(() => {
       grecaptcha.enterprise.execute('6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE', { action: 'submit' }).then((token) => {
         setCaptchaToken(token);
-        fetch('http://localhost:3001/verificar-captcha', {
+        fetch(`${process.env.REACT_APP_API_URL}/verificar-captcha`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
