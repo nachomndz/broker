@@ -10,6 +10,9 @@ const recaptchaKey = "6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE";
 
 app.use(express.json());
 app.use(cors());
+// Permitir CORS para el dominio de tu frontend
+const allowedOrigins = ['https://broker-jizhal8tt-ignacios-projects-13371c2f.vercel.app']; // Asegúrate de agregar tu dominio aquí
+app.use(cors({ origin: allowedOrigins }));
 
 // Ruta para verificar el token de reCAPTCHA
 app.post('/api/verificar-captcha', async (req, res) => {
