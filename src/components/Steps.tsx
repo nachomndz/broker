@@ -5,22 +5,22 @@ const Steps = () => {
     {
       title: "Solicitud",
       description: "Solicita un estudio gratuito para analizar el tipo de financiación más adecuada a tus necesidades.",
-      image: "/src/assets/numbers/number_1.png", // Ruta correcta de la imagen de fondo
+      image: "/assets/numbers/number_1.png", // Ruta correcta de la imagen de fondo
     },
     {
       title: "Viabilidad",
       description: "Nuestro gestor te indicará la viabilidad de la operación y la documentación necesaria.",
-      image: "/src/assets/numbers/number_2.png",
+      image: "/assets/numbers/number_2.png",
     },
     {
       title: "Tramitación",
       description: "Nos encargamos de realizar todas las gestiones necesarias para poder formalizar la hipoteca.",
-      image: "/src/assets/numbers/number_3.png",
+      image: "/assets/numbers/number_3.png",
     },
     {
       title: "Firma",
       description: "Te acompañamos en todo el proceso hasta la firma en la notaría.",
-      image: "/src/assets/numbers/number_4.png",
+      image: "/assets/numbers/number_4.png",
     },
   ];
 
