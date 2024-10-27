@@ -10,14 +10,33 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false); // Estado para el envío del formulario
 
   useEffect(() => {
-    // Ejecuta reCAPTCHA cuando el componente se monta
     grecaptcha.enterprise.ready(() => {
       grecaptcha.enterprise.execute('6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE', { action: 'submit' }).then((token) => {
-        setCaptchaToken(token); // Guardar el token de reCAPTCHA cuando esté listo
+        // Almacena el token en el estado
+        setCaptchaToken(token); // Actualiza el estado con el token
+  
+        // Llama al backend para verificar el token
+        fetch('http://localhost:3001/verificar-captcha', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ token })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            console.log('Verificación de CAPTCHA exitosa');
+          } else {
+            // Si la verificación falla, puedes limpiar el token
+            setCaptchaToken(null);
+          }
+        });
       });
     });
-  }, []); // Ejecutar una vez al cargar la página
-
+  }, []);
+  
+  
   const handleCaptchaVerification = (e) => {
     e.preventDefault();
 
@@ -68,8 +87,8 @@ function Contact() {
         </div>
 
         <button type="submit" className="submit-button" disabled={!captchaToken || isSubmitting}>
-          Enviar
-        </button>
+  Enviar
+</button>
       </form>
     </div>
   );
