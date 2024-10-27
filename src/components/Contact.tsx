@@ -16,12 +16,13 @@ function Contact() {
     aceptaPolitica: false,
     aceptaComunicaciones: false
   });
+  console.log('API URL:', import.meta.env.VITE_API_URL);
 
   useEffect(() => {
     grecaptcha.enterprise.ready(() => {
       grecaptcha.enterprise.execute('6LfHHG0qAAAAAH8ZER3UVuDuCxyDr5OgoYO480cE', { action: 'submit' }).then((token) => {
         setCaptchaToken(token);
-        fetch(`${process.env.REACT_APP_API_URL}/verificar-captcha`, {
+        fetch(`${import.meta.env.VITE_API_URL}/verificar-captcha`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
