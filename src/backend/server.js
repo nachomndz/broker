@@ -19,7 +19,16 @@ const cors = require('cors');
 
 // Permitir manejo de JSON
 app.use(express.json());
-app.use(cors());
+
+const allowedOrigins = [
+    /\.hipotecasinentradas\.com$/, // Permitir cualquier subdominio
+    'http://localhost:5173',
+    /^https:\/\/.*-ignacios-projects-\w+\.vercel\.app$/, // Permitir cualquier subdominio de Vercel que siga el patrón
+
+    // Para desarrollo local
+  ];
+  
+  app.use(cors({ origin: allowedOrigins }));
 
 // Configura el cliente de reCAPTCHA
 const client = new RecaptchaEnterpriseServiceClient();
